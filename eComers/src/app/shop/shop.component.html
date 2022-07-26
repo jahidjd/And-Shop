@@ -1,0 +1,350 @@
+<!-- Navebar Area -->
+<menu></menu>
+
+<!-- Search Area -->
+<div class="search-overlay">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-layer"></div>
+            <div class="search-overlay-close">
+                <span class="search-overlay-close-line"></span>
+                <span class="search-overlay-close-line"></span>
+            </div>
+            <div class="search-overlay-form">
+                <form>
+                    <input type="text" class="input-search" placeholder="Search here...">
+                    <button type="submit"><i class="fas fa-search search-btn"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Banner Area -->
+<section id="common_banner_one">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="common_banner_text">
+                    <h2>Shop</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><i class="fas fa-slash"></i></li>
+                        <li class="active">Shop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Shop Main Area -->
+<section id="shop_main_area" class="ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="product_filter">
+                    <div class="customs_selects">
+                        <select name="product" class="customs_sel_box">
+                            <option value="Filter">Filter</option>
+                            <option value="volvo">Most Popular</option>
+                            <option value="saab">Best Seller</option>
+                            <option value="mercedes">Tranding</option>
+                            <option value="audi">Featured</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="product_shot">
+                    <div class="product_shot_title">
+                        <p> Sort By:</p>
+                    </div>
+                    <div class="customs_selects">
+                        <select name="product" class="customs_sel_box">
+                            <option value="Popularity">Sort by Popularity</option>
+                            <option value="newness">Sort by newness</option>
+                            <option value="low">price: low to high</option>
+                            <option value="high">price: high to low</option>
+                        </select>
+                    </div>
+                    <div class="product_shot_view">
+                        <ul>
+                            <li><a href="shop-3.html"><i class="fas fa-list"></i></a></li>
+                            <li><a href="shop-2.html"><i class="fas fa-th-large"></i></a></li>
+                            <li><a href="shop.html" class="active"><i class="fas fa-th"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ng-container *ngFor="let s of shop; let i = index;">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngIf="i<16">
+                    <div class="product_wrappers_one">
+                        <div class="thumb">
+                            <a [routerLink]="['/details',s.id]" class="image">
+                                <img src="assets/img/upload/product/{{s.photo}}" alt="Product" />
+                                <img class="hover-image" src="assets/img/upload/product/{{s.hover_photo}}" alt="Product" />
+                            </a>
+                            <div class="actions">
+                                <a routerLink="../wishlist" class="action wishlist" title="Wishlist"><i
+                                        class="far fa-heart"></i></a>
+                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i
+                                        class="fas fa-expand"></i></a>
+                                <a href="compare.html" class="action compare" title="Compare"><i
+                                        class="fas fa-exchange-alt"></i></a>
+                            </div>
+                            <button title="Add To Cart" class="add-to-cart offcanvas-toggle" data-bs-toggle="modal" data-bs-target="#shoppingCartModal" (click)="addToCart(s.id)">
+                                Add To Cart
+                            </button>
+                        </div>
+                        <div class="content">
+                            <h5 class="title"><a [routerLink]="['/details',s.id]">{{s.name}}</a></h5>
+                            <span class="price">
+                                <span class="new">{{s.price}}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="col-lg-12">
+                <!-- pagination start -->
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- pagination end -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Instagram Arae -->
+
+<!-- footer Area -->
+<app-footer></app-footer>
+
+<!-- Product Modal Area Start-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="product_one_modal_top modal-content">
+            <button type="button" class="close close_modal_icon" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body" id="product_slider_one">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+                        <div class="products_modal_sliders owl-carousel owl-theme">
+                            <img src="assets/img/product-image/product1.png" alt="img" />
+                            <img src="assets/img/product-image/product2.png" alt="img" />
+                            <img src="assets/img/product-image/product3.png" alt="img" />
+                            <img src="assets/img/product-image/product4.png" alt="img" />
+                            <img src="assets/img/product-image/product5.png" alt="img" />
+                            <img src="assets/img/product-image/product6.png" alt="img" />
+                            <img src="assets/img/product-image/product7.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 col-12">
+                        <div class="modal_product_content_one">
+                            <h3>Black fashion handbag JI9023</h3>
+                            <div class="reviews_rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(2 Customer Review)</span>
+                            </div>
+                            <h4>$317.76</h4>
+                            <p>
+                                Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.
+                            </p>
+                            <div class="variable-single-item">
+                                <span>Color</span>
+                                <div class="product-variable-color">
+                                    <label for="modal-product-color-red1">
+                                        <input name="modal-product-color" id="modal-product-color-red1"
+                                            class="color-select" type="radio" checked="">
+                                        <span class="product-color-red"></span>
+                                    </label>
+                                    <label for="modal-product-color-green3">
+                                        <input name="modal-product-color" id="modal-product-color-green3"
+                                            class="color-select" type="radio">
+                                        <span class="product-color-green"></span>
+                                    </label>
+
+                                    <label for="modal-product-color-blue5">
+                                        <input name="modal-product-color" id="modal-product-color-blue5"
+                                            class="color-select" type="radio">
+                                        <span class="product-color-blue"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <form action="#!" id="product_count_form_one">
+                                <div class="product_count_one">
+                                    <div class="plus-minus-input">
+                                        <div class="input-group-button">
+                                            <button type="button" class="button" data-quantity="minus" data-field="quantity">
+                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <input class="form-control" type="number" name="quantity" value="0" />
+                                        <div class="input-group-button">
+                                            <button type="button" class="button" data-quantity="plus" data-field="quantity">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a routerLink="../cart" class="theme-btn-one btn-black-overlay btn_sm">Add To
+                                        Cart</a>
+                                </div>
+                            </form>
+                            <div class="modal_share_icons_one">
+                                <h4>SHARE THIS PRODUCT</h4>
+                                <div class="posted_icons_one">
+                                    <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#!"><i class="fab fa-instagram"></i></a>
+                                    <a href="#!"><i class="fab fa-twitter"></i></a>
+                                    <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#!"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#!"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Shopingcart Modal Area Start-->
+<div class="modal right fade shoppingCartModal" id="shoppingCartModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3>My Cart ({{cartAdd}})</h3>
+                <div class="products-cart-content">
+                    <div class="products-cart d-flex align-items-center" *ngFor="let c of cart; let i = index">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/upload/product/{{c.photo}}" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">{{c.name}}</a></h3>
+                            <div class="products-price">
+                                <span>{{c.qty}}</span>
+                                <span>x</span>
+                                <span class="price">{{c.price}}</span>
+                            </div>
+                        </div>
+                        <a class="remove-btn" (click)="removeCart(i)"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+
+                </div>
+                <div class="products-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span class="subtotal">{{subtotal}}</span>
+                </div>
+                <div class="products-cart-btn">
+                    <a href="checkout.html" class="theme-btn-one btn-black-overlay btn_md">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Wishlist Modal Area Start-->
+<div class="modal right fade shoppingWishlistModal" id="shoppingWishlistModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3>My Wishlist (3)</h3>
+                <div class="products-cart-content">
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product1.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Coronavirus Face Mask</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$39.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product2.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Protective Gloves</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$99.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product3.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Infrared Thermometer Gun</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$90.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+                <div class="products-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span class="subtotal">$228.00</span>
+                </div>
+                <div class="products-cart-btn">
+                    <a routerLink="../wishlist" class="theme-btn-one btn-black-overlay btn_md">Wishlist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,186 @@
+<menu></menu>
+
+
+<!-- Banner Area -->
+<section id="common_banner_one">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="common_banner_text">
+                    <h2>Login</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><i class="fas fa-slash"></i></li>
+                        <li class="active">Login</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Checkout-Area -->
+<section id="login_area" class="ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="account_form">
+                    <h3>Login</h3>
+                    
+                        <div class="default-form-box">
+                            <label>Username or email <span>*</span></label>
+                            <input type="text" class="form-control" [(ngModel)]="userName">
+                        </div>
+                        <div class="default-form-box">
+                            <label>Passwords <span>*</span></label>
+                            <input type="password" class="form-control" [(ngModel)]="password">
+                        </div>
+                        <div class="login_submit">
+                            <button class="theme-btn-one btn-black-overlay btn_md" type="submit" (click)="login()">login</button>
+                        </div>
+                        <div class="remember_area">
+                            <label class="checkbox-default">
+                                <input type="checkbox">
+                                <span>Remember me</span>
+                            </label>
+                        </div>
+
+                        <a routerLink="../register">Create Your Account?</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer Area -->
+<app-footer></app-footer>
+
+<!-- Shopingcart Modal Area Start-->
+<div class="modal right fade shoppingCartModal" id="shoppingCartModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3>My Cart (3)</h3>
+                <div class="products-cart-content">
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product1.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Coronavirus Face Mask</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$39.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product2.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Protective Gloves</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$99.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product3.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Infrared Thermometer Gun</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$90.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+                <div class="products-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span class="subtotal">$228.00</span>
+                </div>
+                <div class="products-cart-btn">
+                    <a href="checkout.html" class="theme-btn-one btn-black-overlay btn_md">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Wishlist Modal Area Start-->
+<div class="modal right fade shoppingWishlistModal" id="shoppingWishlistModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3>My Wishlist (3)</h3>
+                <div class="products-cart-content">
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product1.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Coronavirus Face Mask</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$39.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product2.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Protective Gloves</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$99.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product3.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Infrared Thermometer Gun</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$90.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+                <div class="products-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span class="subtotal">$228.00</span>
+                </div>
+                <div class="products-cart-btn">
+                    <a href="wishlist.html" class="theme-btn-one btn-black-overlay btn_md">Wishlist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

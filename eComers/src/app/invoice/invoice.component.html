@@ -1,0 +1,54 @@
+<menu></menu>
+<div class="container">
+    <h2 style="text-align: center;">Your Order Details</h2>
+    <h4 style="text-align: center;">Your Order Is On The Way</h4>
+    <h5 style="text-align: center;">Order ID={{invoice[0].order_id}}
+        <hr>
+        <hr>
+    </h5>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>PRODUCT</th>
+                <th>DESCRIPTION</th>
+                <th>QUANTITY</th>
+                <th>PRICE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let inv of invoice; let i = index;">
+                <td>
+                    <img src="assets/img/upload/product/{{inv.photo}}" alt="" width="80px" height="60px">
+                </td>
+                <td>{{inv.pName}}</td>
+                <td>{{inv.qty}}</td>
+                <td>{{inv.price*inv.qty}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">Shipping Rate</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td colspan="3">Total</td>
+                <td>{{invoice[0].total_amount}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">DILIVERY ADDRESS</td>
+                <td colspan="2" style="text-align: center;"> SHIPPING ADDRESS</td>
+
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">{{invoice[0].address}}</td>
+                <td colspan="2" style="text-align: center;">{{invoice[0].address}}</td>
+            </tr>
+        </tfoot>
+    </table>
+   
+</div>

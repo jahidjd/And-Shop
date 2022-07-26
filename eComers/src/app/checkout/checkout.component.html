@@ -1,0 +1,291 @@
+<!-- Top Header Area -->
+
+<!-- Navebar Area -->
+<menu></menu>
+<!-- Search Area -->
+
+<!-- Banner Area -->
+
+<!-- Checkout-Area -->
+<section id="checkout_one" class="ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="checkout-area-bg bg-white">
+                    <div class="check-heading">
+                        <h3>Billings Information</h3>
+                    </div>
+                    <div class="check-out-form">
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="fname">First name</label>
+                                    <input type="text" required="" [(ngModel)]="first_name" class="form-control" id="fname" placeholder="First name *">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="lname">Last name</label>
+                                    <input type="text" required="" [(ngModel)]="last_name" class="form-control" id="lname" placeholder="Last name *">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="text">Phone</label>
+                                    <input class="form-control" required="" [(ngModel)]="phone" type="text" id="phone" placeholder="Enter Your Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="email">Email Addresse</label>
+                                    <input class="form-control" required="" [(ngModel)]="email" type="text" id="email" placeholder="info@gmail.com">
+                                </div>
+                            </div>
+                            <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group">
+                                        <label for="country">District</label>
+                                        <select class="form-control first_null" id="country">
+                                            <option value="">Select an option...</option>
+                                            <option value="AX">usa</option>
+                                            <option value="AF">Afghanistan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group">
+                                        <label for="city">State/City</label>
+                                        <select class="form-control first_null" id="city">
+                                            <option value="">Select an option...</option>
+                                            <option value="AX">Aland Islands</option>
+                                            <option value="AF">Afghanistan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group">
+                                        <label for="zip">State/City</label>
+                                        <input type="text" class="form-control" id="zip" required="" placeholder="Enter Your zipcode">
+                                    </div>
+                                </div> -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <label for="faddress">Full Address</label>
+                                    <input type="text" class="form-control" [(ngModel)]="address" id="faddress" required="" placeholder="Enter your address here..">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                                    <label class="form-check-label" for="materialUnchecked">Save In Address
+                                            Book</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="order_review  box-shadow bg-white">
+                    <div class="check-heading">
+                        <h3>Your Orders</h3>
+                    </div>
+                    <div class="table-responsive order_table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let c of cart; let i = index;">
+                                    <td>{{c.name}}<span class="product-qty">x {{c.qty}}</span>
+                                    </td>
+                                    <td>{{c.price*c.qty}}</td>
+                                </tr>
+
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>SubTotal</th>
+                                    <td class="product-subtotal">{{total}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Shipping</th>
+                                    <td>{{shippingRate}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td class="product-subtotal">{{total+shippingRate}}</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="order_review bg-white">
+                    <div class="check-heading">
+                        <h3>Payment</h3>
+                    </div>
+                    <div class="payment_method">
+                        <div class="payment_option">
+                            <div class="custome-radio">
+                                <input class="form-check-input" required="" [(ngModel)]="payment_method" type="radio" name="payment_option" id="exampleRadios3" value="Bank Transfer" checked="">
+                                <label class="form-check-label" for="exampleRadios3">Direct Bank Transfer</label>
+                                <p data-method="option3" class="payment-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                            </div>
+                            <div class="custome-radio">
+                                <input class="form-check-input" type="radio" [(ngModel)]="payment_method" name="payment_option" id="exampleRadios4" value="Cash On Delivery">
+                                <label class="form-check-label" for="exampleRadios4">Cash On Delivery</label>
+                                <p data-method="option4" class="payment-text">Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                            </div>
+                            <div class="custome-radio">
+                                <input class="form-check-input" type="radio" [(ngModel)]="payment_method" name="payment_option" id="exampleRadios5" value="bKash">
+                                <label class="form-check-label" for="exampleRadios5">bKash</label>
+                                <p data-method="option5" class="payment-text">Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
+                            </div>
+                        </div>
+                    </div> <a class="theme-btn-one btn-black-overlay btn_sm" (click)="placeOrder()">Place Order</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- footer Area -->
+<app-footer></app-footer>
+
+<!-- CopyRight Area -->
+
+
+<!-- Shopingcart Modal Area Start-->
+<!-- <div class="modal right fade shoppingCartModal" id="shoppingCartModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3>My Cart (3)</h3>
+                <div class="products-cart-content">
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product1.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Coronavirus Face Mask</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$39.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product2.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Protective Gloves</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$99.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product3.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Infrared Thermometer Gun</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$90.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+                <div class="products-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span class="subtotal">$228.00</span>
+                </div>
+                <div class="products-cart-btn">
+                    <a href="checkout.html" class="theme-btn-one btn-black-overlay btn_md">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Wishlist Modal Area Start-->
+<div class="modal right fade shoppingWishlistModal" id="shoppingWishlistModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3>My Wishlist (3)</h3>
+                <div class="products-cart-content">
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product1.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Coronavirus Face Mask</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$39.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product2.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Protective Gloves</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$99.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product3.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Infrared Thermometer Gun</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$90.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+                <div class="products-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span class="subtotal">$228.00</span>
+                </div>
+                <div class="products-cart-btn">
+                    <a href="wishlist.html" class="theme-btn-one btn-black-overlay btn_md">Wishlist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

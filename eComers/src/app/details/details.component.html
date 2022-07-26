@@ -1,0 +1,510 @@
+<!-- Navebar Area -->
+<menu></menu>
+
+<!-- Search Area -->
+
+
+<!-- Banner Area -->
+<section id="common_banner_one">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="common_banner_text">
+                    <h2>Shop</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><i class="fas fa-slash"></i></li>
+                        <li class="active">Product Single</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Single Area -->
+<section id="product_single_one" class="ptb-100">
+    <div class="container">
+        <div class="row area_boxed">
+            <div class="col-lg-4">
+                <div class="product_single_one_img">
+                    <img src="assets/img/upload/product/{{details.photo}}" alt="" />
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="product_details_right_one">
+                    <div class="modal_product_content_one">
+                        <h3>{{details.name}}</h3>
+                        <div class="reviews_rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(2 Customer Review)</span>
+                        </div>
+                        <h4>{{details.price}} <del>$456.43</del> </h4>
+                        <p>{{details.details}}
+                        </p>
+                        <div class="customs_selects">
+                            <select name="product" class="customs_sel_box">
+                                <option value="volvo">Size</option>
+                                <option value="saab">XL</option>
+                                <option value="mercedes">S</option>
+                                <option value="audi">M</option>
+                                <option value="audi">L</option>
+                            </select>
+                        </div>
+                        <div class="variable-single-item">
+                            <span>Color</span>
+                            <div class="product-variable-color">
+                                <label for="modal-product-color-red">
+                                    <input name="modal-product-color" id="modal-product-color-red"
+                                        class="color-select" type="radio" checked="">
+                                    <span class="product-color-red"></span>
+                                </label>
+                                <label for="modal-product-color-green">
+                                    <input name="modal-product-color" id="modal-product-color-green"
+                                        class="color-select" type="radio">
+                                    <span class="product-color-green"></span>
+                                </label>
+
+                                <label for="modal-product-color-blue">
+                                    <input name="modal-product-color" id="modal-product-color-blue"
+                                        class="color-select" type="radio">
+                                    <span class="product-color-blue"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <form action="#!" id="product_count_form_two">
+                            <div class="product_count_one">
+                                <div class="plus-minus-input">
+                                    <div class="input-group-button">
+                                        <button type="button" class="button" data-quantity="minus" data-field="quantity">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                    <input class="form-control" type="number" name="quantity" value="0">
+                                    <div class="input-group-button">
+                                        <button type="button" class="button" data-quantity="plus" data-field="quantity">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="links_Product_areas">
+                            <ul>
+                                <li>
+                                    <a routerLink="/../wishlist" class="action wishlist" title="Wishlist"><i
+                                            class="far fa-heart"></i>Add To Wishlist</a>
+                                </li>
+
+                            </ul>
+                            <a routerLink="/../cart" class="theme-btn-one btn-black-overlay btn_sm" (click)="addToCart(details.id)">Add To Cart</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="product_details_tabs">
+                    <ul class="nav nav-tabs">
+                        <li><a data-bs-toggle="tab" data-bs-target="#description" href="#!" class="active">Description</a></li>
+                        <li><a data-bs-toggle="tab" data-bs-target="#additional" href="#!">Additional
+                                Information</a></li>
+                        <li><a data-bs-toggle="tab" data-bs-target="#review" href="#!">Review</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="description" class="tab-pane fade in show active">
+                            <div class="product_description">
+                                <p>{{details.long_details}}
+                                </p>
+                            </div>
+                        </div>
+                        <div id="additional" class="tab-pane fade">
+                            <div class="product_additional">
+                                <ul>
+                                    <li>Weight: <span>{{details.weight}}</span></li>
+                                    <li>Dimensions: <span>{{details.dimensions}}</span></li>
+                                    <li>Materials: <span> {{details.materials}}</span></li>
+                                    <li>Other Info: <span>{{details.other_info}}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="review" class="tab-pane fade">
+                            <div class="product_reviews">
+                                <ul>
+                                    <li class="media d-flex">
+                                        <div class="media-img flex-shrink-0">
+                                            <img src="assets/img/user/user1.png" alt="img">
+                                        </div>
+                                        <div class="media-body flex-grow-1 ms-3">
+                                            <div class="media-header">
+                                                <div class="media-name">
+                                                    <h4>Sara Anela</h4>
+                                                    <p>5 days ago</p>
+                                                </div>
+                                                <div class="post-share">
+                                                    <a href="#!" class="replay">Replay</a>
+                                                    <a href="#!" class="">Report</a>
+                                                </div>
+                                            </div>
+                                            <div class="media-pragraph">
+                                                <div class="product_review_strat">
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                </div>
+                                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Vestibulum ac
+                                                    diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="media d-flex">
+                                        <div class="media-img flex-shrink-0">
+                                            <img src="assets/img/user/user2.png" alt="img">
+                                        </div>
+                                        <div class="media-body flex-grow-1 ms-3">
+                                            <div class="media-header">
+                                                <div class="media-name">
+                                                    <h4>Sara Anela</h4>
+                                                    <p>5 days ago</p>
+                                                </div>
+                                                <div class="post-share">
+                                                    <a href="#!" class="replay">Replay</a>
+                                                    <a href="#!" class="">Report</a>
+                                                </div>
+                                            </div>
+                                            <div class="media-pragraph">
+                                                <div class="product_review_strat">
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                </div>
+                                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Vestibulum ac
+                                                    diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="media d-flex">
+                                        <div class="media-img flex-shrink-0">
+                                            <img src="assets/img/user/user3.png" alt="img">
+                                        </div>
+                                        <div class="media-body flex-grow-1 ms-3">
+                                            <div class="media-header">
+                                                <div class="media-name">
+                                                    <h4>Sara Anela</h4>
+                                                    <p>5 days ago</p>
+                                                </div>
+                                                <div class="post-share">
+                                                    <a href="#!" class="replay">Replay</a>
+                                                    <a href="#!" class="">Report</a>
+                                                </div>
+                                            </div>
+                                            <div class="media-pragraph">
+                                                <div class="product_review_strat">
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                    <span><a href="#!"><i class="fas fa-star"></i></a></span>
+                                                </div>
+                                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Vestibulum ac
+                                                    diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Product -->
+<section id="related_product" class="pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="center_heading">
+                    <h2>You Might Also Like</h2>
+                    <p>Mauris luctus nisi sapien tristique dignissim ornare</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ng-container *ngFor="let p of product; let i = index">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12" *ngIf="i<4">
+                    <div class="product_wrappers_one">
+                        <div class="thumb">
+                            <a [routerLink]="['/details',p.id]" class="image">
+                                <img src="assets/img/upload/product/{{p.photo}}" alt="Product" />
+                                <img class="hover-image" src="assets/img/upload/product/{{p.hover_photo}}" alt="Product" />
+                            </a>
+                            <div class="actions">
+                                <a routerLink="/wishlist" class="action wishlist" title="Wishlist"><i
+                                        class="far fa-heart"></i></a>
+                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i
+                                        class="fas fa-expand"></i></a>
+                                <a href="compare.html" class="action compare" title="Compare"><i
+                                        class="fas fa-exchange-alt"></i></a>
+                            </div>
+                            <button title="Add To Cart" class="add-to-cart offcanvas-toggle" data-bs-toggle="modal" data-bs-target="#shoppingCartModal">
+                                Add To Cart
+                            </button>
+                        </div>
+                        <div class="content">
+                            <h5 class="title"><a [routerLink]="['/details',p.id]">{{p.name}}</a></h5>
+                            <span class="price">
+                                <span class="new">{{p.price}}</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Instagram Arae -->
+
+
+<!-- footer Area -->
+<app-footer></app-footer>
+
+<!-- Product Modal Area Start-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="product_one_modal_top modal-content">
+            <button type="button" class="close close_modal_icon" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body" id="product_slider_one">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 col-sm-12 col-12">
+                        <div class="products_modal_sliders owl-carousel owl-theme">
+                            <img src="assets/img/product-image/product1.png" alt="img" />
+                            <img src="assets/img/product-image/product2.png" alt="img" />
+                            <img src="assets/img/product-image/product3.png" alt="img" />
+                            <img src="assets/img/product-image/product4.png" alt="img" />
+                            <img src="assets/img/product-image/product5.png" alt="img" />
+                            <img src="assets/img/product-image/product6.png" alt="img" />
+                            <img src="assets/img/product-image/product7.png" alt="img" />
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 col-12">
+                        <div class="modal_product_content_one">
+                            <h3>Black fashion handbag JI9023</h3>
+                            <div class="reviews_rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(2 Customer Review)</span>
+                            </div>
+                            <h4>$317.76</h4>
+                            <p>
+                                Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.
+                            </p>
+                            <div class="variable-single-item">
+                                <span>Color</span>
+                                <div class="product-variable-color">
+                                    <label for="modal-product-color-red1">
+                                        <input name="modal-product-color" id="modal-product-color-red1"
+                                            class="color-select" type="radio" checked="">
+                                        <span class="product-color-red"></span>
+                                    </label>
+                                    <label for="modal-product-color-green3">
+                                        <input name="modal-product-color" id="modal-product-color-green3"
+                                            class="color-select" type="radio">
+                                        <span class="product-color-green"></span>
+                                    </label>
+
+                                    <label for="modal-product-color-blue5">
+                                        <input name="modal-product-color" id="modal-product-color-blue5"
+                                            class="color-select" type="radio">
+                                        <span class="product-color-blue"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <form action="#!" id="product_count_form_one">
+                                <div class="product_count_one">
+                                    <div class="plus-minus-input">
+                                        <div class="input-group-button">
+                                            <button type="button" class="button" data-quantity="minus" data-field="quantity">
+                                                <i class="fa fa-minus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <input class="form-control" type="number" name="quantity" value="0" />
+                                        <div class="input-group-button">
+                                            <button type="button" class="button" data-quantity="plus" data-field="quantity">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a routerLink="../cart" class="theme-btn-one btn-black-overlay btn_sm">Add To
+                                        Cart</a>
+                                </div>
+                            </form>
+                            <div class="modal_share_icons_one">
+                                <h4>SHARE THIS PRODUCT</h4>
+                                <div class="posted_icons_one">
+                                    <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#!"><i class="fab fa-instagram"></i></a>
+                                    <a href="#!"><i class="fab fa-twitter"></i></a>
+                                    <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#!"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="#!"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Shopingcart Modal Area Start-->
+<div class="modal right fade shoppingCartModal" id="shoppingCartModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3>My Cart (3)</h3>
+                <div class="products-cart-content">
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product1.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Coronavirus Face Mask</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$39.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product2.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Protective Gloves</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$99.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product3.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Infrared Thermometer Gun</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$90.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+                <div class="products-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span class="subtotal">$228.00</span>
+                </div>
+                <div class="products-cart-btn">
+                    <a href="checkout.html" class="theme-btn-one btn-black-overlay btn_md">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Wishlist Modal Area Start-->
+<div class="modal right fade shoppingWishlistModal" id="shoppingWishlistModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <h3>My Wishlist (3)</h3>
+                <div class="products-cart-content">
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product1.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Coronavirus Face Mask</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$39.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product2.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Protective Gloves</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$99.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="products-cart d-flex align-items-center">
+                        <div class="products-image">
+                            <a href="#"><img src="assets/img/product-image/product3.png" alt="image"></a>
+                        </div>
+                        <div class="products-content">
+                            <h3><a href="#">Infrared Thermometer Gun</a></h3>
+                            <div class="products-price">
+                                <span>1</span>
+                                <span>x</span>
+                                <span class="price">$90.00</span>
+                            </div>
+                        </div>
+                        <a href="#" class="remove-btn"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+                <div class="products-cart-subtotal">
+                    <span>Subtotal</span>
+                    <span class="subtotal">$228.00</span>
+                </div>
+                <div class="products-cart-btn">
+                    <a routerlink="../wishlist" class="theme-btn-one btn-black-overlay btn_md">Wishlist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
